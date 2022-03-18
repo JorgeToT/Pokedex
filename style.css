@@ -9,7 +9,7 @@ body {
 }
 header,
 footer {
-    background-image: url("img/Pokedex.png");
+    background-image: url("./img/Pokedex.png");
     background-position: center;
     height: 250px;
     display: flex;
