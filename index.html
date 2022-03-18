@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="icon" href="img/pokeball.png">
+        <title>Pokedex</title>
+    </head>
+    <body>
+        <header>
+            <input
+                type="text"
+                id="pokeNameInput"
+                name="pokeNameInput"
+                placeholder="Bulbasaur"
+            />
+            <button id="button">Buscar</button>
+        </header>
+        <section>
+            <img
+                src="./img/pokeball.png"
+                alt="Pokemon"
+                id="pokeImg"
+                class="coloresFondoBorde"
+            />
+            <div class="datos textCapitalize">
+                <h1 id="pokeName" class="coloresFondoBorde"></h1>
+                <h1 id="pokeType1" class="format1"></h1>
+                <h1 id="pokeType2" class="format1"></h1>
+                <div class="statsPoke coloresFondoBorde">
+                    <div id="hpPoke"></div>
+                    <div id="atkPoke"></div>
+                    <div id="atkSpePoke"></div>
+                    <div id="defPoke"></div>
+                    <div id="defSpePoke"></div>
+                    <div id="speedPoke"></div>
+                </div>
+            </div>
+            <table
+                id="tablaMovimientos"
+                class="textCapitalize coloresFondoBorde"
+            ></table>
+        </section>
+        <footer>
+            <script src="/script.js"></script>
+        </footer>
+    </body>
+</html>
