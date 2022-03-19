@@ -12,41 +12,40 @@ const fetchPokemon = () => {
         })
         .then((data) => {
             if (data) {
-                let pokeImg = data.sprites.other.home.front_default;
+                let pokeImg = data.sprites.other.home;
                 let namePoke = data.name;
                 let typePoke = data.types;
                 let statsPoke = data.stats;
+                let pokeAbilities = data.abilities;
                 let movesPoke = data.moves;
                 pokeImage(pokeImg);
                 pokeName(namePoke);
                 pokeType(typePoke);
                 pokeStats(statsPoke);
+                abilitiesPoke(pokeAbilities);
                 pokeMoves(movesPoke);
             }
         });
 };
-
 const pokeImage = (url) => {
     const pokePhoto = document.getElementById("pokeImg");
-    pokePhoto.src = url;
+    pokePhoto.src = url.front_default;
+    document.getElementById("pokeImgS").src = url.front_shiny;
+    document.getElementById("stats").className = "datos textCapitalize";
 };
 const pokeName = (url) => {
     document.getElementById("pokeName").innerHTML = url;
 };
 const pokeType = (url) => {
+    let type1 = url[0].type.name;
     document.getElementById("pokeType1").innerHTML =
-        "<div class='format " +
-        url[0].type.name +
-        "'>" +
-        url[0].type.name +
-        "</div>";
+        "<div class='format " + type1 + "'>" + type1 + "</div>";
+    document.getElementById("pokeImg").className = type1 + " format2";
+    document.getElementById("pokeImgS").className = type1 + " format2";
     if (url.length == 2) {
+        let type2 = url[1].type.name;
         document.getElementById("pokeType2").innerHTML =
-            "<div class='format " +
-            url[1].type.name +
-            "'>" +
-            url[1].type.name +
-            "</div>";
+            "<div class='format " + type2 + "'>" + type2 + "</div>";
     } else {
         document.getElementById("pokeType2").innerHTML = "";
     }
@@ -65,6 +64,13 @@ const pokeStats = (url) => {
     document.getElementById("speedPoke").innerHTML =
         "SPD:<span>" + url[5].base_stat + "</span>";
 };
+const abilitiesPoke = (url) => {
+    let abilities = "Ability:<br>";
+    url.forEach((element) => {
+        abilities += element.ability.name + "   <br>";
+    });
+    document.getElementById("pokeAbilities").innerHTML = abilities;
+};
 const pokeMoves = (url) => {
     let movimientos = [];
     url.forEach((element) => {
@@ -81,7 +87,6 @@ const pokeMoves = (url) => {
     document.getElementById("tablaMovimientos").innerHTML =
         createTable(movimientos);
 };
-
 const createTable = (array) => {
     let stringTable =
         "<tr><th>Nombre de Movimiento</th><th>Nivel</th><th>Método</th><th>Desde la Versión</th></tr>";
@@ -95,17 +100,14 @@ const createTable = (array) => {
     });
     return stringTable;
 };
-
 document.getElementById("button").addEventListener("click", function () {
     fetchPokemon();
 });
-
 pokeNameInput.addEventListener("keyup", function (event) {
     if (event.keyCode == 13) {
         button.click();
     }
 });
-
 function sortBy(key, reverse) {
     var moveSmaller = reverse ? 1 : -1;
     var moveLarger = reverse ? -1 : 1;

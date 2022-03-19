@@ -2,6 +2,9 @@
     box-sizing: border-box;
     font-family: "Mukta", sans-serif;
 }
+.hide {
+    display: none;
+}
 body {
     margin: 0;
     background-color: #87cefa;
@@ -14,7 +17,7 @@ footer {
     height: 250px;
     display: flex;
     flex-wrap: wrap-reverse;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     margin: 0;
 }
@@ -35,43 +38,59 @@ button {
     padding: 0 20px;
     text-align: center;
     text-transform: capitalize;
-    border: 2px solid black;
+    border: 2px solid #4169e1;
     border-radius: 10px;
     filter: drop-shadow(10px 10px 30px);
-    background-color: white;
+    background-color: #ffffff;
 }
 button {
     cursor: pointer;
 }
-.statsPoke {
-    width: fit-content;
+.title {
+    width: 100%;
+    text-align: center;
+    transform: scaleY(-1);
+    font-size: 50px;
+    color: #ffff00;
+    text-shadow: 5px -1px 1px #4169e1;
+    font-family: "Pokemon Solid", sans-serif;
+    margin: 0;
+}
+.datos {
+    text-align: center;
+    width: 40%;
 }
 .statsPoke div {
-    width: 100%;
     text-align: end;
+    padding: 0 30% 0 0;
 }
 .statsPoke span {
-    margin-left: 15px;
+    margin: 0 15px;
 }
-#pokeImg {
+.pokeImg {
     align-self: center;
     width: 400px;
     height: 400px;
-    margin-right: 50px;
+    margin: 0 50px;
 }
 .textCapitalize {
     text-transform: capitalize;
+    font-weight: normal;
 }
 .statsPoke,
 h1 {
     font-size: 20px;
-    margin: 10px 0 0 20px;
+    margin: 10px 20px 0 20px;
     padding: 0 20px;
+}
+.statsPoke {
+    width: 70%;
+    margin: 20px auto;
 }
 #tablaMovimientos {
     font-size: 20px;
     width: 40%;
-    margin: 50px 30% 0 30%;
+    margin: 20px 30% 0 30%;
     border-collapse: collapse;
     border-radius: 1em;
     overflow: hidden;
@@ -93,6 +112,15 @@ h1 {
 }
 .format1 {
     padding: 0;
+}
+.format2 {
+    border-radius: 1em;
+}
+#pokeImgS {
+    margin-top: 10px;
+}
+.pokeImgS {
+    justify-self: start;
 }
 .steel {
     background-color: #cccccc;
@@ -148,15 +176,29 @@ h1 {
 .flying {
     background-color: #baaaff;
 }
-
+@media (min-width: 1350px) {
+    .statsPoke{
+        width: 40%;
+    }
+}
+@media (max-width: 780px) {
+    .datos {
+        width: 100%;
+        margin: 0 20%;
+    }
+    .statsPoke {
+        width: 80%;
+    }
+}
 @media (max-width: 475px) {
     header,
     footer {
-        height: 150px;
+        height: 240px;
     }
     input,
     button {
-        font-size: 25px;
+        font-size: 20px;
+        margin: 0;
     }
     #tablaMovimientos {
         font-size: 15px;
@@ -166,9 +208,15 @@ h1 {
         width: 200px;
         height: 200px;
     }
-}
-@media (max-width: 617px) {
-    #pokeImg {
-        margin-right: 0;
+    #pokeImgS {
+        align-self: center;
+        width: 200px;
+        height: 200px;
+    }
+    .datos {
+        margin: 0;
+    }
+    .title{
+        font-size: 40px;
     }
 }

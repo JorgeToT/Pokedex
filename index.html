@@ -11,11 +11,16 @@
             href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap"
             rel="stylesheet"
         />
-        <link rel="icon" href="img/pokeball.png">
-        <title>Pokedex</title>
+        <link
+            href="http://fonts.cdnfonts.com/css/pokemon-solid"
+            rel="stylesheet"
+        />
+        <link rel="icon" href="img/pokeball.png" />
+        <title>Pokédex</title>
     </head>
     <body>
         <header>
+            <h1 class="title">Pokédex</h1>
             <input
                 type="text"
                 id="pokeNameInput"
@@ -25,13 +30,15 @@
             <button id="button">Buscar</button>
         </header>
         <section>
-            <img
-                src="./img/pokeball.png"
-                alt="Pokemon"
-                id="pokeImg"
-                class="coloresFondoBorde"
-            />
-            <div class="datos textCapitalize">
+            <div>
+                <img
+                    src="./img/pokeball.png"
+                    alt="Pokemon"
+                    id="pokeImg"
+                    class="format2 pokeImg"
+                />
+            </div>
+            <div class="hide" id="stats">
                 <h1 id="pokeName" class="coloresFondoBorde"></h1>
                 <h1 id="pokeType1" class="format1"></h1>
                 <h1 id="pokeType2" class="format1"></h1>
@@ -43,6 +50,13 @@
                     <div id="defSpePoke"></div>
                     <div id="speedPoke"></div>
                 </div>
+                <h1
+                    id="pokeAbilities"
+                    class="coloresFondoBorde textCapitalize"
+                ></h1>
+            </div>
+            <div class="pokeImgS">
+                <img src="" alt="Pokemon" id="pokeImgS" class="hide" />
             </div>
             <table
                 id="tablaMovimientos"
