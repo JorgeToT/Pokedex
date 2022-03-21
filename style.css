@@ -46,6 +46,10 @@ button {
 button {
     cursor: pointer;
 }
+button:hover{
+    background-color: #4169e1;
+    transform: scale(.9) scaleY(-1);
+}
 .title {
     width: 100%;
     text-align: center;
@@ -53,8 +57,6 @@ button {
     font-size: 50px;
     color: #ffff00;
     text-shadow: 5px -1px 1px #4169e1;
-    font-family: "Pokemon Solid", sans-serif;
-    margin: 0;
 }
 .datos {
     text-align: center;
